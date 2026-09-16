@@ -3,9 +3,12 @@
 ## Objective
 Give hospital-site pharmacy liaisons a guided, 4-question wizard that
 deterministically returns the correct delivery basket, carrier, estimated
-delivery timeframe, and whether signature capture is required — replacing
-the existing "Delivery" tool on the Clinical Aid hub. See ADR-0001 for why
-this is a deterministic lookup rather than a drug-database lookup.
+delivery timeframe, and whether signature capture is required. This ships
+as a standalone tool intended to eventually replace the existing
+"Delivery" tool on the Clinical Aid hub — the hub swap itself is a
+deferred manual step, not part of this release (see Out of scope below).
+See ADR-0001 for why this is a deterministic lookup rather than a
+drug-database lookup.
 
 ## Requirements
 - Ask destination first: hospital bedside, hospital DC, or patient home.

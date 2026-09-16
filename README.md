@@ -5,17 +5,19 @@ Answer four questions — destination, refrigerated, specialty, CII/
 signature-required — and get the correct delivery basket, carrier,
 estimated delivery timeframe, and whether signature capture is required.
 
-Replaces the previous "Delivery" tool on the Clinical Aid hub. See
+Ships as a standalone tool intended to eventually replace the previous
+"Delivery" tool on the Clinical Aid hub — the hub swap is a deferred
+manual step, not part of this release (see
+`docs/specs/deliveryiq-wizard-spec.md`). See
 `docs/adr/0001-deterministic-rules-table-wizard.md` for why this is a
 deterministic lookup rather than a drug-database lookup, and
 `docs/specs/open-questions.md` for a resolved question about
 signature-required display on the courier shortcut routes.
 
-> **Clinical-framing note:** the wording above and in the wizard itself
-> (e.g. "CII/signature-required," "specialty medication") should be
-> reviewed by the Human in Charge for clinical accuracy before this ships
-> to liaisons — this README and the in-app copy were drafted by Build, not
-> clinically validated.
+> **Clinical-framing note:** resolved — the Founder ran the app locally
+> (`npm run dev`) and reviewed the liaison-facing wording (e.g.
+> "Specialty," "CII / signature required") directly in the wizard.
+> Confirmed accurate as-is; no changes needed.
 
 ## How a liaison uses it
 1. Open the wizard and answer **Where is this delivery going?**
@@ -39,7 +41,7 @@ npm run build        # production build to dist/
 ```
 
 CI (`.github/workflows/ci.yml`) runs typecheck, tests, and build on every
-push and pull request.
+push to `main` and on every pull request.
 
 ## Rules table
 `src/rules/deliveryRules.ts` is the source of truth for routing outcomes,

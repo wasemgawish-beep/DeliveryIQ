@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { PATIENT_HOME_RULES } from '../src/rules/deliveryRules'
+import { PATIENT_HOME_RULES, SHORTCUT_RULES } from '../src/rules/deliveryRules'
 import { resolveDelivery } from '../src/rules/resolveDelivery'
 import type { WizardAnswers } from '../src/rules/types'
 
@@ -62,6 +62,7 @@ describe('rules table exhaustiveness (clinical-schema-integrity)', () => {
 
   it('the patient-home table has exactly 8 rows and the shortcut table has exactly 2 (10 valid combinations total)', () => {
     expect(PATIENT_HOME_RULES).toHaveLength(8)
+    expect(SHORTCUT_RULES).toHaveLength(2)
   })
 })
 

@@ -11,8 +11,11 @@ the liaison reports the delivery's attributes directly rather than the
 system inferring them from a specific medication.
 
 ## Context
-The old "Delivery" tool on the Clinical Aid hub is being replaced. The
-routing decision is fully enumerable: 3 destination values, where
+This is intended to eventually replace the old "Delivery" tool on the
+Clinical Aid hub, though the actual hub swap is a deferred manual step
+outside this build (see ADR-0002 and `docs/specs/
+deliveryiq-wizard-spec.md`). The routing decision is fully enumerable:
+3 destination values, where
 "patient home" further branches on 3 booleans, for exactly 10 valid input
 combinations total, each mapping to one unambiguous outcome. CII/signature
 routing carries compliance weight, so the mapping needs a visible,
@@ -31,9 +34,12 @@ reviewable change history independent of general application changes.
   because separating rules from app logic is near-zero cost here and
   preserves an auditable change history for a table with CII/compliance
   weight.
-- **Standalone app outside Clinical Aid** — rejected: no infrastructure
-  benefit, and this replaces an existing hub-listed tool rather than
-  introducing a new one.
+- **Standalone app outside Clinical Aid** — rejected as the permanent
+  home: no infrastructure benefit, and this is intended to replace an
+  existing hub-listed tool rather than introduce a new one. (The current
+  build ships standalone as an interim state with hub integration
+  deferred to a manual step — see ADR-0002 — which is different from
+  adopting this rejected alternative permanently.)
 
 ## Rationale
 This is a fully enumerable, bounded decision table. Deterministic logic is
