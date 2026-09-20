@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;
@@ -27,58 +29,60 @@
   }
 }
 
-body {
-  margin: 0;
-}
+@layer base {
+  body {
+    margin: 0;
+  }
 
-#root {
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 48px 24px;
-  min-height: 100svh;
-  box-sizing: border-box;
-}
+  #root {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 48px 24px;
+    min-height: 100svh;
+    box-sizing: border-box;
+  }
 
-h1 {
-  font-size: 28px;
-  font-weight: 500;
-  color: var(--text-h);
-  margin: 0 0 24px;
-}
+  h1 {
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--text-h);
+    margin: 0 0 24px;
+  }
 
-section > div[role='group'] {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
+  section > div[role='group'] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
 
-button {
-  font: inherit;
-  padding: 12px 20px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: var(--bg);
-  color: var(--text-h);
-  cursor: pointer;
-}
+  button {
+    font: inherit;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text-h);
+    cursor: pointer;
+  }
 
-button:hover {
-  background: var(--accent-bg);
-  border-color: var(--accent);
-}
+  button:hover {
+    background: var(--accent-bg);
+    border-color: var(--accent);
+  }
 
-dl {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 8px 16px;
-  margin: 24px 0;
-}
+  dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px 16px;
+    margin: 24px 0;
+  }
 
-dt {
-  font-weight: 500;
-  color: var(--text-h);
-}
+  dt {
+    font-weight: 500;
+    color: var(--text-h);
+  }
 
-dd {
-  margin: 0;
+  dd {
+    margin: 0;
+  }
 }
