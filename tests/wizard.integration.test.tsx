@@ -15,6 +15,8 @@ describe('Wizard — destination shortcuts skip the other three questions', () =
 
     expect(await screen.findByRole('heading', { name: 'Delivery routing' })).toBeInTheDocument()
     expect(screen.getByText('Yellow')).toBeInTheDocument()
+    expect(screen.getByText('Shipping Method')).toBeInTheDocument()
+    expect(screen.queryByText('Carrier')).not.toBeInTheDocument()
     expect(screen.getByText('Courier (Meds 2 Beds)')).toBeInTheDocument()
     expect(screen.getByText('Same day (typically)')).toBeInTheDocument()
     // Signature is always captured on courier routes by standard practice

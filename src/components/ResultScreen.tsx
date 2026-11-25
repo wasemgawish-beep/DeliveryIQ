@@ -12,7 +12,7 @@ export function ResultScreen({ result, onRestart }: Props) {
       <dl>
         <dt>Basket</dt>
         <dd>{result.basket}</dd>
-        <dt>Carrier</dt>
+        <dt>Shipping Method</dt>
         <dd>{result.carrier}</dd>
         <dt>Estimated delivery</dt>
         <dd>{result.eta}</dd>
